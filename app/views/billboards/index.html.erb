@@ -1,2 +1,11 @@
-<h1>Billboards#index</h1>
-<p>Find me in app/views/billboards/index.html.erb</p>
+<h1 class="title">Music Billboards</h1>
+<ul class="nav_bar">
+  <li><%= link_to "Create New Billboard", new_billboard_path, class: "nav_bar_button" %></li> </ul>
+<% if @billboards.any? %>
+  <% @billboards.each do |bb| %>
+  <h2 class="billboard_name"><%= link_to bb.name, billboard_path(bb), class: "billboard_name" %></h2>
+  <hr>
+  <% end %>
+<% else %>
+  <h2 class="billboard_name">No billboards</h2>
+<% end %>

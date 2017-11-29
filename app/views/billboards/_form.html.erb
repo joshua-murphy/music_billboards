@@ -1,0 +1,14 @@
+<%= form_for @billboard do |f| %>
+  <%= f.label :name, "Billboard Title:" %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br><br>
+  <%= f.label :count, "Total Number:" %>
+  <%= f.number_field :count, required: true %>
+  <br><br>
+  <%= f.label :genre, "Board Genre:" %>
+  <%= f.text_field :genre, required: true %>
+  <br><br>
+  <%= f.submit "Save" %>
+  <br>
+<% end %>
+<br>

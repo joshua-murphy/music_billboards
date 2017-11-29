@@ -1,15 +1,54 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+  background-color: #dddddd;
+  margin: 0px 50px;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+}
+
+.billboard_name {
+  text-align: center;
+  color: black;
+  text-decoration: none;  
+}
+
+.nav_bar {
+  list-style-type: none;
+  margin-left: 0px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #eceaea;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.nav_bar li {
+  float: left;
+  border-right: 1px solid rgb(94, 94, 94);
+  background-color: #bbbbbb;  
+}
+
+.nav_bar li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+}
+
+.nav_bar li a:hover {
+  background-color: rgb(139, 139, 139);
+  color: white;
+}
+
+form {
+  /* float: center; */
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;  
+  background-color: #eceaea
+}

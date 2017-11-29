@@ -1,2 +1,8 @@
-<h1>Billboards#new</h1>
-<p>Find me in app/views/billboards/new.html.erb</p>
+<h1 class="title">New Billboard</h1>
+
+<ul class="nav_bar">
+  <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
+  <li><%= link_to "Cancel", billboards_path, class: "nav_bar_button" %></li>
+</ul>
+
+<%= render "form" %>

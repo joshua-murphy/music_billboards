@@ -1,2 +1,7 @@
-<h1>Billboards#show</h1>
-<p>Find me in app/views/billboards/show.html.erb</p>
+<h1 class="title"><%= @billboard.name %></h1>
+<ul class="nav_bar">
+  <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
+  <li><%= link_to "Edit", edit_billboard_path(@billboard), class: "nav_bar_button" %></li>
+  <li><%= link_to "Delete", billboard_path(@billboard), method: :delete,
+    data: { confirm: "Are you sure?" }, class: "nav_bar_button" %></li>
+</ul>
