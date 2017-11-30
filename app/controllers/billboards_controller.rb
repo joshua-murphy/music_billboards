@@ -1,7 +1,6 @@
 class BillboardsController < ApplicationController
 
-  before_action :billboard_set, only: [:show, :edit, :update, :destroy]
-  # before_action :billboard_params
+  before_action :set_billboard, only: [:show, :edit, :update, :destroy]
 
   def index
     @billboards = Billboard.all
@@ -34,7 +33,7 @@ class BillboardsController < ApplicationController
 
   private
 
-    def billboard_set
+    def set_billboard
       @billboard = Billboard.find(params[:id])
     end
 
