@@ -1,8 +1,13 @@
 <h1 class="title">New Artist</h1>
+<% if params[:billboard_id] %>
+  <% @billboard = Billboard.find(params[:billboard_id]) %>
+  redirect_to new_billboard_artist_path
+  <%= render "form" %>
+<% else %>
+  <ul class="nav_bar">
+    <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
+    <li><%= link_to "Cancel", artists_path, class: "nav_bar_button" %></li>
+  </ul>
 
-<ul class="nav_bar">
-  <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
-  <li><%= link_to "Cancel", billboard_path(@billboard), class: "nav_bar_button" %></li>
-</ul>
-
-<%= render "form" %>
+  <%= render "form" %>
+<% end %>

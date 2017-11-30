@@ -1,6 +1,9 @@
 <h1 class="title">Music Billboards</h1>
 <ul class="nav_bar">
-  <li><%= link_to "Create New Billboard", new_billboard_path, class: "nav_bar_button" %></li> </ul>
+  <li><%= link_to "Create New Billboard", new_billboard_path, class: "nav_bar_button" %></li>
+  <li><%= link_to "All Artists", artists_path, class: "nav_bar_button" %></li>
+  <li><%= link_to "Create New Artist", new_artist_path, class: "nav_bar_button" %></li> 
+</ul><br>
 <% if @billboards.any? %>
   <% @billboards.each do |bb| %>
   <h2 class="billboard_name"><%= link_to bb.name, billboard_path(bb), class: "billboard_name" %></h2>

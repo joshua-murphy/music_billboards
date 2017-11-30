@@ -1,6 +1,8 @@
-<%= form_for [@billboard, @artist] do |f| %>
+<%= form_for @artist do |f| %>
   <%= f.label :name, "Artist Name:" %>
   <%= f.text_field :name, required: true, autofocus: true %>
+  <%= f.label :genre, "Artist Genre:" %>
+  <%= f.text_field :genre, required: true %>
   <br><br>
   <%= f.submit "Save" %>
   <br>

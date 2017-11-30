@@ -18,6 +18,11 @@ html {
   margin-bottom: 0px;
 }
 
+.chart {
+  margin-top: 36px;
+  font-size: 64px;
+}
+
 .billboard_name {
   text-align: center;
   color: black;

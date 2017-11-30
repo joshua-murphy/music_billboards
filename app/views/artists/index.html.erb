@@ -1,18 +1,17 @@
-<h1 class="title">Artists Chart</h1>
+<h1 class="title">All Artists</h1>
 
 <ul class="nav_bar">
   <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
-    <li><%= link_to "Back", billboard_path(@billboard), class: "nav_bar_button" %></li>
-  <li><%= link_to "New Artist", new_billboard_artist_path([@billboard, @artist]), 
-    class: "nav_bar_button" %></li>
+  <li><%= link_to "Create New Artist", new_artist_path(@artist), class: "nav_bar_button" %></li>
 </ul>
 
 <% if @artists.any? %>
   <ul class="band_list">
-  <% @artists.each do |artist| %>
-    <li class="band_names">Rating: <%= artist.rank %> -
-    <%= link_to artist.name, billboard_artist_path(@billboard, artist), class: "band_names" %> </li>
-  <% end %>
+    <% @artists.each do |artist| %>
+      <li class="band_names">
+      <%= link_to "#{artist.name} | Genre - #{artist.genre}", artist_path(artist), 
+        class: "band_names" %> </li>
+    <% end %>
   </ul>
 <% else %>
   <br>
