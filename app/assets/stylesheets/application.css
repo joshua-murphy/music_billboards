@@ -27,7 +27,7 @@ html {
 .band_list {
   margin-top: 50px;
   margin-left: 17.5%;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .band_names {
@@ -73,4 +73,8 @@ form {
   border: 1px solid black;
   border-radius: 10px;  
   background-color: #eceaea
+}
+
+p.inline .voteRank {
+  display: inline;
 }

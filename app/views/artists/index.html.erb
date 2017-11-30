@@ -8,13 +8,13 @@
 </ul>
 
 <% if @artists.any? %>
-  <ol class="band_list">
+  <ul class="band_list">
   <% @artists.each do |artist| %>
     <li class="band_names">Rating: <%= artist.rank %> -
     <%= link_to artist.name, billboard_artist_path(@billboard, artist), class: "band_names" %> </li>
   <% end %>
-  </ol>
+  </ul>
 <% else %>
   <br>
   <h1 class="billboard_name">No Artists</h1>
-  <% end %>
+<% end %>
