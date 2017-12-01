@@ -1,19 +1,21 @@
 <h1 class="title">All Artists</h1>
 
-<ul class="nav_bar">
-  <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
-  <li><%= link_to "Create New Artist", new_artist_path(@artist), class: "nav_bar_button" %></li>
-</ul>
+<div class="ui two item menu">
+  <%= link_to "Home", billboards_path, class: "item" %>
+  <%= link_to "Create New Artist", new_artist_path(@artist), class: "item" %>
+</div>
 
 <% if @artists.any? %>
-  <ul class="band_list">
+  <div class="ui massive center celled list">
     <% @artists.each do |artist| %>
-      <li class="band_names">
-      <%= link_to "#{artist.name} | Genre - #{artist.genre}", artist_path(artist), 
-        class: "band_names" %> </li>
+      <div class="item">
+        <div class="ui center aligned header">
+          <%= link_to "#{artist.name} | Genre: #{artist.genre}", artist_path(artist) %>
+        </div>
     <% end %>
-  </ul>
 <% else %>
-  <br>
-  <h1 class="billboard_name">No Artists</h1>
+        <div class="ui center aligned header">
+          <h1>No Artists</h1>
+        </div>
+      </div>
 <% end %>

@@ -1,10 +1,18 @@
-<%= form_for @artist do |f| %>
-  <%= f.label :name, "Artist Name:" %>
-  <%= f.text_field :name, required: true, autofocus: true %>
-  <%= f.label :genre, "Artist Genre:" %>
-  <%= f.text_field :genre, required: true %>
-  <br><br>
-  <%= f.submit "Save" %>
-  <br>
-<% end %>
 <br>
+<div class="form_container ui large center aligned form">
+  <%= form_for @artist do |f| %>
+    <div class="two fields">
+    <div class="field">
+      <%= f.label :name, "Artist Name" %>
+      <%= f.text_field :name, required: true, autofocus: true %>
+    </div> 
+    <div class="field">
+      <%= f.label :genre, "Artist Genre" %>
+      <%= f.text_field :genre, required: true %>
+    </div> 
+    </div>
+    <div>
+      <%= f.submit "Save", class: "ui right floated primary button" %>
+    <div>
+</div>
+  <% end %>

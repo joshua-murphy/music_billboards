@@ -1,19 +1,26 @@
-<h1 class="subtitle">All <%= @billboard.genre %> Artists:</h1>
-
 <% if @artists.any? %>
+<h1 class="ui center aligned header">All <%= @billboard.genre %> Artists:</h1>
   <% hidden_count = 0 %>
-  <% @artists.each do |artist| %>
-    <% if artist.genre == @billboard.genre %>
-      <li class="band_names">
-      <%= link_to artist.name, billboard_artist_path(@billboard, artist), 
-        class: "band_names" %></li>
-    <% else %>
-      <% hidden_count += 1 %>
-      <% if hidden_count == @artists.count %>
-        <h1>No <%= @billboard.genre %> artists</h1>
-      <% end %>
+  <div class="ui massive center celled list">
+    <% @artists.each do |artist| %>
+      <div class="item">
+        <% if artist.genre == @billboard.genre %>
+          <div class="ui center aligned header">
+            <%= link_to artist.name, billboard_artist_path(@billboard, artist) %>
+          </div>
+        <% else %>
+          <% hidden_count += 1 %>
+          <% if hidden_count == @artists.count %>
+            <div class="ui center aligned header">          
+              <h1>No <%= @billboard.genre %> artists</h1>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
 <% else %>
-  <h1>No artists</h1>
+  <div class="ui center aligned header">
+    <h1>No Artists</h1>
+  </div>
 <% end %>

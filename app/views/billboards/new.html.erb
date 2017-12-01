@@ -1,8 +1,8 @@
 <h1 class="title">New Billboard</h1>
 
-<ul class="nav_bar">
-  <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
-  <li><%= link_to "Cancel", billboards_path, class: "nav_bar_button" %></li>
-</ul>
+<div class="ui two item menu">
+  <%= link_to "Home", billboards_path, class: "item" %>
+  <%= link_to "Cancel", billboards_path, class: "item" %>
+</div>
 
 <%= render "form" %>

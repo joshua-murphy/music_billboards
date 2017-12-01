@@ -1,12 +1,11 @@
 <h1 class="title"><%= @billboard.name %></h1>
 
-<ul class="nav_bar">
-  <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
-  <li><%= link_to "Edit", edit_billboard_path(@billboard), class: "nav_bar_button" %></li>
-  <li><%= link_to "Delete Billboard", billboard_path(@billboard), method: :delete,
-    data: { confirm: "Are you sure?" }, class: "nav_bar_button" %></li>
-</ul>
-<br>
+<div class="ui three item menu">
+  <%= link_to "Home", billboards_path, class: "item" %>
+  <%= link_to "Edit", edit_billboard_path(@billboard), class: "item" %>
+  <%= link_to "Delete Billboard", billboard_path(@billboard), method: :delete,
+    data: { confirm: "Are you sure?" }, class: "item" %>
+</div>
 
 <% @artists = Artist.all %>
 <%= render :partial => "artists/index" %>

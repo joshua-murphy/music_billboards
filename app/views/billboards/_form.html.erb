@@ -1,11 +1,18 @@
-<%= form_for @billboard do |f| %>
-  <%= f.label :name, "Billboard Title:" %>
-  <%= f.text_field :name, required: true, autofocus: true %>
-  <br><br>
-  <%= f.label :genre, "Board Genre:" %>
-  <%= f.text_field :genre, required: true %>
-  <br><br>
-  <%= f.submit "Save" %>
-  <br>
-<% end %>
 <br>
+<div class="form_container ui large center aligned form">
+  <%= form_for @billboard do |f| %>
+    <div class="two fields">
+    <div class="field">
+      <%= f.label :name, "Billboard Title:" %>
+      <%= f.text_field :name, required: true, autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.label :genre, "Board Genre:" %>
+      <%= f.text_field :genre, required: true %>
+    </div>
+    </div>
+    <div>
+      <%= f.submit "Save", class: "ui right floated primary button" %>
+    </div>
+<% end %>
+</div>

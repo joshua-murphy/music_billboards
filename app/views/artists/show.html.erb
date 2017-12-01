@@ -1,19 +1,30 @@
 <h1 class="title"><%= @artist.name %></h1>
-  <ul class="nav_bar">
-    <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
+  <div class="ui four item menu">
+    <%= link_to "Home", billboards_path, class: "item" %>
+
 <% if params[:billboard_id] %>
+
   <% @billboard = Billboard.find(params[:billboard_id]) %>
-  <li><%= link_to "Back", billboard_artists_path(@billboard), class: "nav_bar_button" %></li>
-    <li><%= link_to "Edit Artist", edit_billboard_artist_path(@billboard, @artist),
-    class: "nav_bar_button" %></li>
-    <li><%= link_to "Delete Artist", artist_path(@artist), method: :delete,
-    data: { confirm: "Are you sure?" }, class: "nav_bar_button" %></li>
-  </ul>
+  <%= link_to "Back", billboard_artists_path(@billboard), class: "item" %></li>
+    <%= link_to "Edit Artist", edit_billboard_artist_path(@billboard, @artist),
+    class: "item" %></li>
+    <%= link_to "Delete Artist", artist_path(@artist), method: :delete,
+    data: { confirm: "Are you sure?" }, class: "item" %>
+  </div>
+
 <% else %>
-      <li><%= link_to "Back", artists_path, class: "nav_bar_button" %></li>
-    <li><%= link_to "Edit Artist", edit_artist_path(@artist),
-    class: "nav_bar_button" %></li>
-    <li><%= link_to "Delete Artist", artist_path(@artist), method: :delete,
-    data: { confirm: "Are you sure?" }, class: "nav_bar_button" %></li>
-  </ul>
+
+      <%= link_to "Back", artists_path, class: "item" %>
+    <%= link_to "Edit Artist", edit_artist_path(@artist),
+    class: "item" %>
+    <%= link_to "Delete Artist", artist_path(@artist), method: :delete,
+    data: { confirm: "Are you sure?" }, class: "item" %>
+  </div>
+  
 <% end %>
+
+<div class="ui segment">
+  <h2 class="ui center aligned header"> 
+    Genre: <%= "#{@artist.genre}" %> 
+  </h2> 
+</div>

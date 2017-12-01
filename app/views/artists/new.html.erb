@@ -4,10 +4,11 @@
   redirect_to new_billboard_artist_path
   <%= render "form" %>
 <% else %>
-  <ul class="nav_bar">
-    <li><%= link_to "Home", billboards_path, class: "nav_bar_button" %></li>
-    <li><%= link_to "Cancel", artists_path, class: "nav_bar_button" %></li>
-  </ul>
+
+  <div class="ui two item menu">
+    <%= link_to "Home", billboards_path, class: "item" %>
+    <%= link_to "Cancel", artists_path, class: "item" %>
+  </div>
 
   <%= render "form" %>
 <% end %>
